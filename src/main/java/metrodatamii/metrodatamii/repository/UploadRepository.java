@@ -5,9 +5,7 @@
  */
 package metrodatamii.metrodatamii.repository;
 
-import java.util.List;
-import metrodatamii.metrodatamii.entities.LoaningRequest;
-import org.springframework.data.jpa.repository.Query;
+import metrodatamii.metrodatamii.entities.Upload;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
@@ -16,9 +14,5 @@ import org.springframework.stereotype.Repository;
  * @author HP
  */
 @Repository
-public interface LoanRepository extends CrudRepository<LoaningRequest, String> {
-
-    @Query(value = "SELECT * FROM loaning_request WHERE id = ?1", nativeQuery = true)
-    List<LoaningRequest> getLoanById(String id);
-
+public interface UploadRepository extends CrudRepository<Upload, Integer>{
 }

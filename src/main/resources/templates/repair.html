@@ -8,7 +8,7 @@
         <meta name="author" content="Dashboard">
         <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
         <!--<include file = 'header.html'/>-->
-        <title>Asset Management</title>
+        <title>Repair | Asset Management</title>
 
         <!-- Favicons -->
         <link href="dist/img/favicon.png" rel="icon">
@@ -37,12 +37,12 @@
                             $('#loaning').html($scope.moment.format('YYYY/MM/DD'));
                 </script>-->
     </head>
-    <div th:replace="m_loan :: m_loan"></div>
+    <div th:replace="m_repair :: m_repair"></div>
 
     <body>
+
         <section id="container">
             <div th:replace="header :: header"></div>
-
             <!--sidebar start-->
             <aside>
                 <div id="sidebar" class="nav-collapse ">
@@ -89,9 +89,6 @@
                 </div>
             </aside>
             <!--sidebar end-->
-            <!-- **********************************************************************************************************************************************************
-                MAIN CONTENT
-                *********************************************************************************************************************************************************** -->
             <!--main content start-->
             <section id="main-content">
                 <section class="wrapper">
@@ -99,7 +96,7 @@
                         <div class="col-lg-9 main-chart">
                             <!--CUSTOM CHART START -->
                             <div class="border-head">
-                                <h2>LOANING REQUEST</h2>
+                                <h2>REPAIR REQUEST</h2>
                             </div>
                             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#input-actor"><i class="fa fa-plus-circle"></i>
                                 Add Data

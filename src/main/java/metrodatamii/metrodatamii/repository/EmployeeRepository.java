@@ -16,7 +16,11 @@ import org.springframework.stereotype.Repository;
  * @author HP
  */
 @Repository
-public interface EmployeeRepository extends CrudRepository<Employee, String>{
+public interface EmployeeRepository extends CrudRepository<Employee, String> {
+
     @Query(value = "SELECT * FROM employee e WHERE e.is_delete = 'false'", nativeQuery = true)
     List<Employee> getAll();
+
+    @Query(value = "SELECT * FROM employee WHERE id = ?1", nativeQuery = true)
+    List<Employee> getEmployeeById(String id);
 }

@@ -27,11 +27,8 @@
 
     <body>
         <section id="container">
+            <div th:replace="header :: header"></div>
 
-            <!--header end-->
-            <!-- **********************************************************************************************************************************************************
-                MAIN SIDEBAR MENU
-                *********************************************************************************************************************************************************** -->
             <!--sidebar start-->
             <aside>
                 <div id="sidebar" class="nav-collapse ">
@@ -40,7 +37,7 @@
                         <p class="centered"><a href="profile.html"><img src="dist/img/ui-danro.jpg" class="img-circle" width="80"></a></p>
                         <h5 class="centered">Employee</h5>
                         <li class="mt">
-                            <a class="active" href="index.html">
+                            <a class="active" th:href="@{/home}">
                                 <i class="fa fa-dashboard"></i>
                                 <span>Dashboard</span>
                             </a>
@@ -62,13 +59,13 @@
                             </a>
                         </li>
                         <li class="sub-menu">
-                            <a href="index.html">
+                            <a th:href="@{/profile}">
                                 <i class="fa fa-book"></i>
                                 <span>Profile</span>
                             </a>
                         </li>
                         <li class="sub-menu">
-                            <a href="index.html">
+                            <a th:href="@{/about}">
                                 <i class="fa fa-tasks"></i>
                                 <span>About Us</span>
                             </a>

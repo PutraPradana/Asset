@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<div th:fragment="m_job">
+    <!-- Modal Add -->
+    <div class="modal fade" id="addJob" role="dialog" aria-labelledby="confirmDeleteLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Add Job</h4>
+                    <button type="btn btn-lg" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">                       
+                    <div class="form-panel">
+                        <form th:action="@{/addJob}" method="post" class="form-horizontal">
+                            <div class="form-group">
+                                <label for="id" class="col-sm-3  control-label">ID Job</label>
+                                <div class="col-sm-9">
+                                    <input id="id" name="id" type="text" class="form-control" placeholder="ID Job" readonly>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="name" class="col-sm-3  control-label">Name</label>
+                                <div class="col-sm-9">
+                                    <input id="name" name="name" type="text" class="form-control" placeholder="Name">
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="submit" class="btn btn-success" id="confirm">Save</button>
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Modal Edit-->
+    <div class="modal fade" id="editJob" role="dialog" aria-labelledby="confirmDeleteLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Edit Job</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                </div>
+                <div class="modal-body">                       
+                    <div class="form-panel">
+                        <form th:action="@{/editJob/id}" method="post" class="form-horizontal">
+                            <div class="form-group">
+                                <label for="id" class="col-sm-3  control-label">ID Job</label>
+                                <div class="col-sm-9">
+                                    <input id="id" name="id" type="text" class="form-control" placeholder="ID Job" readonly>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="name" class="col-sm-3  control-label">Name</label>
+                                <div class="col-sm-9">
+                                    <input id="name" name="name" type="text" class="form-control" placeholder="Name">
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="submit" class="btn btn-success" id="confirm">Save</button>
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

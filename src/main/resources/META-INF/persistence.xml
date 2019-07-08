@@ -29,6 +29,7 @@
     <class>metrodatamii.metrodatamii.entities.Role</class>
     <class>metrodatamii.metrodatamii.entities.EmployeeJob</class>
     <class>metrodatamii.metrodatamii.entities.LoaningRequest</class>
+    <class>metrodatamii.metrodatamii.entities.Upload</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/sakila?zeroDateTimeBehavior=convertToNull"/>
       <property name="javax.persistence.jdbc.user" value="root"/>

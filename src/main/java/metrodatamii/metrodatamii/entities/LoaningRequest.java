@@ -52,30 +52,27 @@ public class LoaningRequest implements Serializable {
     @Size(min = 1, max = 20)
     @Column(name = "id")
     private String id;
-
     @Basic(optional = false)
+    @NotNull
     @Column(name = "loaning_date")
     @Temporal(TemporalType.DATE)
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date loaningDate;
-
     @Basic(optional = false)
+    @NotNull
     @Column(name = "return_date")
     @Temporal(TemporalType.DATE)
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date returnDate;
-
     @Basic(optional = false)
     @NotNull
     @Column(name = "loaning_total")
     private int loaningTotal;
-
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 100)
     @Column(name = "note")
     private String note;
-
     @Basic(optional = false)
     @NotNull
     @Column(name = "quantity")
@@ -106,6 +103,17 @@ public class LoaningRequest implements Serializable {
         this.loaningTotal = loaningTotal;
         this.note = note;
         this.quantity = quantity;
+    }
+    public LoaningRequest(String id, Date loaningDate, Date returnDate, int loaningTotal, String note, int quantity,
+            Employee employee, DetailAsset detail) {
+        this.id = id;
+        this.loaningDate = loaningDate;
+        this.returnDate = returnDate;
+        this.loaningTotal = loaningTotal;
+        this.note = note;
+        this.quantity = quantity;
+        this.employee = employee;
+        this.detailAsset = detail;
     }
 
     public String getId() {

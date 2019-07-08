@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <aside>
+            <div id="sidebar" class="nav-collapse ">
+                sidebar menu start
+                <ul class="sidebar-menu" id="nav-accordion">
+                    <p class="centered"><a href="profile.html"><img src="dist/img/ui-sam.jpg" class="img-circle" width="80"></a></p>
+                    <h5 class="centered">Sam Soffes</h5>
+                    <li class="mt">
+                        <a class="active" href="home.html">
+                            <i class="fa fa-dashboard"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="sub-menu">
+                        <a href="javascript:;">
+                            <i class="fa fa-desktop"></i>
+                            <span>List</span>
+                        </a>
+                        <ul class="sub">
+                            <li><a th:href="@{/asset}">Asset</a></li>
+                            <li><a th:href="@{/detailasset}">Detail Asset</a></li>
+                            <li><a href="employee.html">Employee</a></li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu">
+                        <a href="javascript:;">
+                            <i class="fa fa-cogs"></i>
+                            <span>Status</span>
+                        </a>
+                        <ul class="sub">
+                            <li><a href="grids.html">Loaning Request</a></li>
+                            <li><a href="calendar.html">Repair Request</a></li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu">
+                        <a class="active" href="index.html">
+                            <i class="fa fa-book"></i>
+                            <span>Profile</span>
+                        </a>
+                    </li>
+                    <li class="sub-menu">
+                        <a class="active" href="index.html">
+                            <i class="fa fa-tasks"></i>
+                            <span>About Us</span>
+                        </a>
+                    </li>
+                </ul>
+                <!--sidebar menu end-->
+            </div>
+        </aside>
+    </body>
+</html>

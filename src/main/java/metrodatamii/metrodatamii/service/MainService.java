@@ -87,7 +87,7 @@ public class MainService {
     }
 
     public Iterable<Job> findAllJob() {
-        return jobRepository.findAll();
+        return jobRepository.getAll();
     }
 
     public Iterable<LoaningRequest> findAllLoan() {
@@ -99,6 +99,6 @@ public class MainService {
     }
 
     public Iterable<Role> findAllRole() {
-        return roleRepository.findAll();
+        return roleRepository.getAll();
     }
 }

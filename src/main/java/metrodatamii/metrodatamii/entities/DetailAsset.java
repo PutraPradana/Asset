@@ -36,7 +36,7 @@ import javax.xml.bind.annotation.XmlTransient;
     @NamedQuery(name = "DetailAsset.findAll", query = "SELECT d FROM DetailAsset d")
     , @NamedQuery(name = "DetailAsset.findById", query = "SELECT d FROM DetailAsset d WHERE d.id = :id")
     , @NamedQuery(name = "DetailAsset.findByBrand", query = "SELECT d FROM DetailAsset d WHERE d.brand = :brand")
-    , @NamedQuery(name = "DetailAsset.findByIsDelete", query = "SELECT d FROM DetailAsset d WHERE d.isDelete = :isDelete")})
+    , @NamedQuery(name = "DetailAsset.findBySeri", query = "SELECT d FROM DetailAsset d WHERE d.seri = :seri")})
 public class DetailAsset implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -59,8 +59,9 @@ public class DetailAsset implements Serializable {
     private String brand;
     @Basic(optional = false)
     @NotNull
-    @Column(name = "is_delete")
-    private boolean isDelete;
+    @Size(min = 1, max = 20)
+    @Column(name = "SERI")
+    private String seri;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "detailAsset", fetch = FetchType.LAZY)
     private List<RepairRequest> repairRequestList;
     @JoinColumn(name = "asset", referencedColumnName = "id")
@@ -76,11 +77,11 @@ public class DetailAsset implements Serializable {
         this.id = id;
     }
 
-    public DetailAsset(String id, String spesification, String brand, boolean isDelete) {
+    public DetailAsset(String id, String spesification, String brand, String seri) {
         this.id = id;
         this.spesification = spesification;
         this.brand = brand;
-        this.isDelete = isDelete;
+        this.seri = seri;
     }
 
     public String getId() {
@@ -107,12 +108,12 @@ public class DetailAsset implements Serializable {
         this.brand = brand;
     }
 
-    public boolean getIsDelete() {
-        return isDelete;
+    public String getSeri() {
+        return seri;
     }
 
-    public void setIsDelete(boolean isDelete) {
-        this.isDelete = isDelete;
+    public void setSeri(String seri) {
+        this.seri = seri;
     }
 
     @XmlTransient
